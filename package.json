@@ -1,19 +1,42 @@
 {
+  "name": "",
+  "version": "",
+  "private": true,
+  "author": {
+    "name": "goze"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "prepare": "husky install",
+    "pretty": "pretty-quick --staged"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.6",
+    "nprogress": "^0.2.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "husky": "^6.0.0",
+    "node-sass": "^4.12.0",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "_id": "@",
   "keywords": [
     "template",
     "husky",
     "prettier"
   ],
-  "author": "goze",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "husky": "^6.0.0",
-    "prettier": "^2.3.2",
-    "pretty-quick": "^3.1.1"
-  },
-  "scripts": {
-    "prepare": "husky install",
-    "pretty": "pretty-quick --staged"
-  }
+  "readme": "ERROR: No README data found!"
 }
