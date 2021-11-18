@@ -26,9 +26,14 @@
           direction="rtl"
           append-to-body
         >
-          <my-message></my-message>
-          <my-message></my-message>
-          <my-message></my-message>
+          <my-message
+            v-for="(item, index) in messages"
+            :key="index"
+            :title="item.title"
+            :desc="item.desc"
+            :time="item.time"
+            :unred="item.unred"
+          ></my-message>
         </el-drawer>
         <el-badge :value="200" :max="99" @click="showMessage">
           <i class="iconfont icon-bell-o" @click="showMessage"></i>
@@ -67,8 +72,15 @@ export default {
     return {
       collapse: false,
       search: '',
-      drawer: true,
+      drawer: false,
+      messages: [],
     }
+  },
+  created() {
+    this.axios.get('/messages').then(({ data }) => {
+      console.log(data)
+      this.messages = data.data
+    })
   },
   methods: {
     toggleCollapse() {
