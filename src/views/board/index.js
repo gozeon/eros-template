@@ -5,6 +5,9 @@ export default {
   name: 'board',
   component: Layout,
   redirect: '/board/system-overview',
+  meta: {
+    text: '看板',
+  },
   children: [
     {
       path: 'system-overview',

@@ -1,6 +1,8 @@
 <template>
   <div class="header">
-    <div class="logo" :class="{ collapse: collapse }">XXXX</div>
+    <div class="logo" :class="{ collapse: collapse }">
+      {{ collapse ? 'xx' : 'XXXX' }}
+    </div>
     <div class="bar">
       <div class="left">
         <i
@@ -40,7 +42,7 @@
         </el-badge>
         <el-dropdown trigger="click">
           <div class="avatar">
-            <img src="../../assets/logo.png" />
+            <img src="../../assets/img/ic_head_default.png" />
             <i class="el-icon-arrow-down el-icon--right"></i>
           </div>
 
@@ -63,6 +65,7 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import MyMessage from './my-message.vue'
 export default {
   components: {
@@ -70,21 +73,25 @@ export default {
   },
   data() {
     return {
-      collapse: false,
       search: '',
       drawer: false,
       messages: [],
     }
   },
+  computed: {
+    // mix the getters into computed with object spread operator
+    ...mapState('global', {
+      collapse: 'collapse',
+    }),
+  },
   created() {
-    this.axios.get('/messages').then(({ data }) => {
-      console.log(data)
+    this.axios.get('/messages.json').then(({ data }) => {
       this.messages = data.data
     })
   },
   methods: {
     toggleCollapse() {
-      this.collapse = !this.collapse
+      this.$store.commit('global/toggleSideBarCollapse')
     },
     showMessage() {
       this.drawer = true
@@ -100,7 +107,8 @@ export default {
 
   .logo {
     width: 160px;
-    background: var(--N3);
+    flex-shrink: 0;
+    background: var(--N2);
 
     display: flex;
     align-items: center;
