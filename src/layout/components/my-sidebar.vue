@@ -98,7 +98,7 @@ export default {
     }
 
     &:hover {
-      background: var(--N3);
+      background: var(--N4);
     }
   }
 

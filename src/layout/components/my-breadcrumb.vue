@@ -45,6 +45,7 @@ export default {
   height: 30px;
   display: flex;
   align-items: center;
+  transition: left 0.3s;
 
   /deep/ .el-breadcrumb {
     .is-link {
