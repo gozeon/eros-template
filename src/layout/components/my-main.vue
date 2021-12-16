@@ -1,11 +1,12 @@
 <template>
-  <main :style="{ left: collapse ? '48px' : '160px' }">
+  <main :style="{ left: collapse ? '48px' : '160px' }" ref="main">
     <transition name="fade-transform" mode="out-in">
       <router-view />
     </transition>
   </main>
 </template>
 <script>
+import Watermask from '../../watermark.js'
 import { mapState } from 'vuex'
 export default {
   computed: {
@@ -13,6 +14,14 @@ export default {
     ...mapState('global', {
       collapse: 'collapse',
     }),
+  },
+  mounted() {
+    console.log(this.$refs.main)
+    new Watermask({
+      el: this.$refs.main,
+      text: 'admin',
+      logoText: 'inc',
+    })
   },
 }
 </script>
@@ -28,5 +37,6 @@ main {
 
   overflow: auto;
   padding: 10px;
+  z-index: 0;
 }
 </style>
