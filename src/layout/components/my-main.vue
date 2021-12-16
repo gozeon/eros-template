@@ -16,9 +16,9 @@ export default {
     }),
   },
   mounted() {
-    console.log(this.$refs.main)
+    // console.log(this.$refs.main.firstChild)
     new Watermask({
-      el: this.$refs.main,
+      el: this.$refs.main.firstChild,
       text: 'admin',
       logoText: 'inc',
     })
