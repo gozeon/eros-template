@@ -19,6 +19,38 @@
           <span slot="title">基础</span>
         </el-menu-item>
       </el-submenu>
+
+      <el-submenu index="2">
+        <template slot="title">
+          <i class="iconfont icon-table"></i>
+          <span>表格</span>
+        </template>
+
+        <el-menu-item index="table-base" :route="{ name: 'table-base' }">
+          <span slot="title">基础</span>
+        </el-menu-item>
+      </el-submenu>
+
+      <el-submenu index="3">
+        <template slot="title">
+          <i class="iconfont icon-success-circle-o"></i>
+          <span>描述页面</span>
+        </template>
+
+        <el-menu-item
+          index="description-base"
+          :route="{ name: 'description-base' }"
+        >
+          <span slot="title">基础</span>
+        </el-menu-item>
+
+        <el-menu-item
+          index="description-size"
+          :route="{ name: 'description-size' }"
+        >
+          <span slot="title">尺寸</span>
+        </el-menu-item>
+      </el-submenu>
     </el-menu>
   </div>
 </template>

@@ -18,7 +18,7 @@ export default {
   mounted() {
     // console.log(this.$refs.main.firstChild)
     new Watermask({
-      el: this.$refs.main.firstChild,
+      el: this.$refs.main,
       text: 'admin',
       logoText: 'inc',
     })

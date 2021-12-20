@@ -18,7 +18,14 @@ class Watermask {
     this.canvas && this.canvas.remove()
 
     const wrapperEl = this.opt.el
-    const rect = wrapperEl.getClientRects()[0]
+
+    const elHeight = wrapperEl?.clientHeight
+    const elChildHeight = wrapperEl?.firstChild?.clientHeight
+
+    const rect = {
+      width: wrapperEl?.clientWidth,
+      height: elHeight > elChildHeight ? elHeight : elChildHeight,
+    }
     const canvas = document.createElement('canvas')
     canvas.width = rect.width
     canvas.height = rect.height
@@ -31,7 +38,7 @@ class Watermask {
     for (let i = 0; i < xCount; i++) {
       for (let j = 0; j < yCount; j++) {
         ctx.save()
-        ctx.translate(i * 140 + 10, j * 70 + 60)
+        ctx.translate(i * 150 + 10, j * 100 + 60)
         ctx.rotate((-15 * Math.PI) / 180)
         ctx.fillStyle = this.opt.textColor
         ctx.font = this.opt.textFont
