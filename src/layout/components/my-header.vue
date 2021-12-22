@@ -52,7 +52,7 @@
             <el-dropdown-item>个人信息</el-dropdown-item>
             <el-dropdown-item>
               <router-link
-                :to="{ name: 'Logout', query: { nextUrl: $route.fullPath } }"
+                :to="{ name: 'login', query: { nextUrl: $route.fullPath } }"
                 tag="div"
                 class="pointer"
                 >退出</router-link

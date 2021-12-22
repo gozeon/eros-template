@@ -34,7 +34,7 @@
       <el-submenu index="3">
         <template slot="title">
           <i class="iconfont icon-success-circle-o"></i>
-          <span>描述页面</span>
+          <span>描述页</span>
         </template>
 
         <el-menu-item
@@ -49,6 +49,21 @@
           :route="{ name: 'description-size' }"
         >
           <span slot="title">尺寸</span>
+        </el-menu-item>
+      </el-submenu>
+
+      <el-submenu index="4">
+        <template slot="title">
+          <i class="iconfont icon-text-o1"></i>
+          <span>常用页</span>
+        </template>
+
+        <el-menu-item index="login" :route="{ name: 'login' }">
+          <span slot="title">登录页</span>
+        </el-menu-item>
+
+        <el-menu-item index="not-found" :route="{ name: 'not-found' }">
+          <span slot="title">404</span>
         </el-menu-item>
       </el-submenu>
     </el-menu>
