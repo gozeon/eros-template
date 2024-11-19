@@ -1,4 +1,16 @@
-#
+# dev
+
+创建 docker 镜像
+
+```docker
+docker build . -t eros
+```
+
+启动环境
+
+```docker
+docker run --rm -it -p 4000:8080 -v $PWD:/app -w /app eros /bin/sh
+```
 
 ## Project setup
 
